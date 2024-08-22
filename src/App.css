@@ -1,38 +1,154 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.wrapper_select_range{
   min-height: 100vh;
+  background-color: rgb(37, 37, 86);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.date_range_picker{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.date_picker{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: rgb(37, 37, 86); */
+}
+
+.arrow {
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  cursor: pointer;
+}
+
+.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.left {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+.up {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+}
+.date_picker_component span{
+  cursor: pointer;
+}
+.date_picker_component button{
+  cursor: pointer;
+  border: none;
+  width: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.date_picker_component button:disabled{
+  cursor:default
+}
+.date_picker_component{
+  width: 300px;
+  height: 262px;
+  background-color: black;
+  color: white;
+  padding: 20px;
+}
+.date_picker_header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.date_picker_body .days{
+  display: grid;
+  grid-template-columns: repeat(7,1fr);
+  gap: 22px;
+  justify-content: center;
+  margin-bottom: 22px;
+}
+.dates {
+  display: grid;
+  grid-template-columns: repeat(7,1fr);
+  align-items: end;
+  gap: 22px;
+}
+.dropdown_wrapper{
+  position: relative;
+}
+.dropdown_close{
+  position: absolute;
+  top: 20px;
+  left: -20px;
+  width: 283px;
+  height: 262px;
+  background-color: rgb(0, 0, 0);
+  color: white;
+  padding: 20px;
+  z-index: 1000;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+.year_dropdown{
+  width: 100%;
+  height: 250px;
+  overflow-y: auto;
+  margin-bottom: 20px;
+  border-bottom: 2px solid gray;
+}
+.year_month_row{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+  padding-bottom: 11px;
+  border-bottom: 1px solid white;
+  margin-top: 11px;
+}
+.months{
+  display: grid;
+  grid-template-columns: repeat(6,1fr);
+  align-items: end;
+  gap: 22px;
+}
+.selected_date{
   color: white;
+  /* width: 23px; */
+  border-radius: 4px;
+  /* padding: 3px 13px; */
+  background-color: rgb(38, 38, 203);
 }
-
-.App-link {
-  color: #61dafb;
+.preDefinded_dates{
+  display: flex;
+  gap: 50px;
+  background-color: rgb(0, 0, 0);
+  padding: 20px;
+  width: 641px;
+  align-items: center;
+  justify-content: center;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.preDefinded_dates button{
+  cursor: pointer;
+  background-color: rgb(0, 0, 0);
+  color: blue;
+  border: none;
+  font-size: 18px;
+  font-weight: 600;
+}
+.show_selected_details{
+  color: white;
+  background-color: rgb(37, 37, 86);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px;
+  overflow-y: scroll;
 }
