@@ -158,7 +158,6 @@ const Calender = ({
     return false;
   };
 
-  console.log({ selectStartDate, selectEndDate });
   return (
     <>
       <div className="date_picker_component">
@@ -199,13 +198,26 @@ const Calender = ({
                   return (
                     <div
                       className="year_month_row"
+                      id="selectedYearRef"
                       ref={year === selectedYear ? selectedYearRef : null}
                     >
-                      <span>{year}</span>{" "}
+                      <span
+                        className={`${
+                          year === selectedYear ? "selected_date" : ""
+                        }`}
+                        onClick={() => setSelectedYear(year)}
+                      >
+                        {year}
+                      </span>{" "}
                       <div className="months">
                         {months.map((month) => {
                           return (
                             <span
+                              className={`${
+                                month === selectedMonth && year === selectedYear
+                                  ? "selected_date"
+                                  : ""
+                              }`}
                               key={month}
                               style={{ padding: "5px" }}
                               onClick={() => monthHandler(year, month - 1)}
